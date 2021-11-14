@@ -12,4 +12,15 @@ body {
   font-weight: 600;
 }
 
+.icon {
+  font-size: 1.75rem;
+  color: #000000;
+  transform: translate(50%);
+  transition: color 0.2s;
+}
+.icon:hover {
+  cursor: pointer;
+  color: #aa25fd;
+}
+
 /*# sourceMappingURL=index.css.map */

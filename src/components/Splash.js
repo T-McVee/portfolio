@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import bgImage from '../img/splash-bg.jpg';
-import iconGh from '../img/github-brands.svg';
-import iconLi from '../img/linkedin-in-brands.svg';
-import iconEmail from '../img/envelope-regular.svg';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 export const Splash = () => {
   return (
@@ -34,9 +35,9 @@ export const Splash = () => {
             </P>
           </HeaderLowerText>
           <Icons>
-            <Icon src={iconGh} />
-            <Icon src={iconLi} />
-            <Icon src={iconEmail} />
+            <FontAwesomeIcon icon={faGithub} className="icon" />
+            <FontAwesomeIcon icon={faLinkedin} className="icon" />
+            <FontAwesomeIcon icon={faEnvelope} className="icon" />
           </Icons>
         </HeaderLower>
       </Header>
@@ -51,6 +52,10 @@ const Section = styled.section`
   background-image: url(${bgImage});
   background-position: center;
   background-size: cover;
+
+  @media screen and (max-width: 675px) {
+    padding: 2rem;
+  }
 `;
 
 const LogoWrapper = styled.div`
@@ -79,6 +84,11 @@ const H1 = styled.h1`
   text-transform: uppercase;
   line-height: 4rem;
   margin-bottom: 1rem;
+
+  @media screen and (max-width: 350px) {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
 `;
 
 const Button = styled.div`
@@ -106,7 +116,7 @@ const HeaderLower = styled.div`
 
 const HeaderLowerText = styled.div`
   display: flex;
-  width: 220px;
+  width: 256px;
   flex-direction: column;
   justify-content: right;
   align-items: flex-end;
@@ -124,6 +134,11 @@ const H2 = styled.h2`
 
 const P = styled.p`
   text-align: right;
+  font-size: 1.2rem;
+
+  @media screen and (max-width: 675px) {
+    text-shadow: 2px 2px 12px rgba(255, 255, 255, 0.8);
+  }
 `;
 
 const Icons = styled.div`
@@ -132,6 +147,8 @@ const Icons = styled.div`
   flex-direction: column;
   align-items: flex-end;
   width: 3rem;
+  height: 67%;
+  justify-content: space-around;
 `;
 
 const Icon = styled.img`
