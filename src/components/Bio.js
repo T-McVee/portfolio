@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { XpBlock } from './bio/XpBlock';
 
 export const Bio = () => {
   return (
@@ -11,23 +12,10 @@ export const Bio = () => {
         molestias tempora?
       </P>
       <Xp>
-        <XpBlock>
-          <H2>Web development:</H2>
-          <Outer>
-            <BigNumber className="big accent1">3</BigNumber>
-            <MidChar>+</MidChar>
-            <Inner>Years of experience</Inner>
-          </Outer>
-        </XpBlock>
-        <XpBlock>
-          <H2>Marketing:</H2>
-          <Outer>
-            <BigNumber className="big accent1">8</BigNumber>
-            <MidChar>+</MidChar>
-            <Inner>Years of experience</Inner>
-          </Outer>
-        </XpBlock>
+        <XpBlock heading="Web development" number="3" />
+        <XpBlock heading="Marketing" number="8" />
       </Xp>
+      <Divide />
     </Section>
   );
 };
@@ -59,36 +47,6 @@ const Xp = styled.div`
   width: 100%;
 `;
 
-const H2 = styled.h2`
-  font-size: 1rem;
-  font-weight: 300;
-  text-transform: lowercase;
-  color: ${(props) => props.theme.colorGrey};
-  margin-bottom: 0.5rem;
-`;
-
-const XpBlock = styled.div`
-  margin-right: 2rem;
-`;
-
-const Outer = styled.div`
-  display: flex;
-`;
-
-const BigNumber = styled.div`
-  font-size: 4.5rem;
-  color: ${(props) => props.theme.colorAccent1};
-  line-height: 3.5rem;
-`;
-
-const MidChar = styled.div`
-  color: ${(props) => props.theme.colorAccent1};
-  font-size: 2rem;
-  font-weight: 600;
-`;
-
-const Inner = styled.div`
-  font-size: 1.5rem;
-  width: 10rem;
-  line-height: 1.8rem;
+const Divide = styled.hr`
+  margin-top: 5.5rem;
 `;
