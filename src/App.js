@@ -20,7 +20,7 @@ function App() {
 const theme = {
   colorBlack: '#000000',
   colorWhite: '#ffffff',
-  colorGrey: '##5E5862',
+  colorGrey: '#5E5862',
   colorAccent1: '#AA25FD',
   colorAccent2: '#DF4F2B',
   radiusSmall: '8px',

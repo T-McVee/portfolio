@@ -22,7 +22,6 @@ export const Bio = () => {
 
 const Section = styled.section`
   width: 100%;
-
   padding: 5.5rem;
 
   @media screen and (max-width: 675px) {
