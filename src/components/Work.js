@@ -24,7 +24,7 @@ const Section = styled.section`
 const H1 = styled.h1`
   font-size: 2rem;
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 `;
 
 const Projects = styled.main`

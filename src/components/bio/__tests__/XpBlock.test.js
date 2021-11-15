@@ -1,4 +1,4 @@
-import { XpBlock } from './XpBlock';
+import { XpBlock } from '../XpBlock';
 import { render, screen, cleanup } from '@testing-library/react';
 
 it('<XpBlock>', () => {
