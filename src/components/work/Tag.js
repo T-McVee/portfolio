@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 
 export const Tag = (props) => {
-  const { text } = props;
+  const { text, rightAlign } = props;
 
   if (!text) return null;
-  return <Wrapper data-testid="tag">{text}</Wrapper>;
+  return (
+    <Wrapper rightAlign={rightAlign} data-testid="tag">
+      {text}
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.li`
@@ -22,5 +26,17 @@ const Wrapper = styled.li`
   &:hover {
     cursor: default;
     transform: scale(1.02);
+  }
+
+  @media screen and (max-width: 1440px) {
+    font-size: 1rem;
+    padding: 0.5rem 1.25rem;
+  }
+
+  @media screen and (max-width: 1304px) {
+    font-size: 1.2rem;
+    padding: 0.5rem 1.5rem;
+    margin: ${(props) =>
+      props.rightAlign ? '0.5rem 0.5rem 0 0' : '0.5rem 0 0 0.5rem'};
   }
 `;

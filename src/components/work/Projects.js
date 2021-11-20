@@ -5,7 +5,7 @@ export const Projects = (props) => {
   const { projects } = props;
 
   return (
-    <Wrapper>
+    <Wrapper data-testid="projects">
       {projects.map((proj, i) =>
         i % 2 ? (
           <Project cover={proj.cover} text={proj.text} rightAlign={false} />

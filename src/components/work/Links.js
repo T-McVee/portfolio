@@ -32,4 +32,13 @@ const Link = styled.a`
   &:hover {
     cursor: pointer;
   }
+
+  @media screen and (max-width: 1440px) {
+    font-size: 1rem;
+  }
+
+  @media screen and (max-width: 1304px) {
+    font-size: 1.2rem;
+    margin: ${(props) => (props.rightAlign ? '0 1rem 0 0' : '0 0 0 1rem')};
+  }
 `;

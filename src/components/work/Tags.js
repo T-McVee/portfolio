@@ -8,7 +8,7 @@ export const Tags = (props) => {
   return (
     <Wrapper rightAlign={rightAlign} data-testid="tags">
       {tags.map((tag) => (
-        <Tag key={tag} text={tag} />
+        <Tag key={tag} text={tag} rightAlign={rightAlign} />
       ))}
     </Wrapper>
   );

@@ -22,8 +22,13 @@ export const Description = (props) => {
 
 const Wrapper = styled.div`
   width: 42%;
-  //width: calc(100% - (416px + 1rem));
   max-width: 500px;
+
+  @media screen and (max-width: 1304px) {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 1rem;
+  }
 `;
 
 const H2 = styled.h2`
@@ -31,6 +36,14 @@ const H2 = styled.h2`
   margin-bottom: 1rem;
   font-size: 2rem;
   text-align: ${(props) => (props.rightAlign ? 'left' : 'right')};
+
+  @media screen and (max-width: 1440px) {
+    font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: 1304px) {
+    font-size: 2rem;
+  }
 `;
 
 const Subheading = styled.p`
@@ -40,10 +53,28 @@ const Subheading = styled.p`
   font-weight: 300;
   text-transform: lowercase;
   margin-bottom: 1rem;
+
+  @media screen and (max-width: 1440px) {
+    font-size: 1.2rem;
+  }
+
+  @media screen and (max-width: 1304px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Body = styled.p`
   font-size: 1.2rem;
   text-align: ${(props) => (props.rightAlign ? 'left' : 'right')};
   margin-bottom: 1rem;
+
+  @media screen and (max-width: 1440px) {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+
+  @media screen and (max-width: 1304px) {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
 `;
