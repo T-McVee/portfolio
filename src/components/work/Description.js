@@ -44,6 +44,10 @@ const H2 = styled.h2`
   @media screen and (max-width: 1304px) {
     font-size: 2rem;
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Subheading = styled.p`
@@ -61,6 +65,10 @@ const Subheading = styled.p`
   @media screen and (max-width: 1304px) {
     font-size: 1.5rem;
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const Body = styled.p`
@@ -76,5 +84,9 @@ const Body = styled.p`
   @media screen and (max-width: 1304px) {
     font-size: 1.2rem;
     line-height: 1.5rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
   }
 `;

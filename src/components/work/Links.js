@@ -41,4 +41,8 @@ const Link = styled.a`
     font-size: 1.2rem;
     margin: ${(props) => (props.rightAlign ? '0 1rem 0 0' : '0 0 0 1rem')};
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;

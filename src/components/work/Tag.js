@@ -39,4 +39,9 @@ const Wrapper = styled.li`
     margin: ${(props) =>
       props.rightAlign ? '0.5rem 0.5rem 0 0' : '0.5rem 0 0 0.5rem'};
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+    padding: 0.5rem 1.25rem;
+  }
 `;
