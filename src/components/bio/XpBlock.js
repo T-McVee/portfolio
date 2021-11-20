@@ -24,7 +24,7 @@ const H2 = styled.h2`
   font-weight: 300;
   text-transform: lowercase;
   color: ${(props) => props.theme.colorGrey};
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 `;
 
 const Outer = styled.div`
@@ -32,7 +32,8 @@ const Outer = styled.div`
 `;
 
 const BigNumber = styled.div`
-  font-size: 4.5rem;
+  font-size: 6rem;
+  font-weight: 500;
   color: ${(props) => props.theme.colorAccent1};
   line-height: 3.5rem;
 `;
@@ -40,13 +41,15 @@ const BigNumber = styled.div`
 const MidChar = styled.div`
   color: ${(props) => props.theme.colorAccent1};
   font-size: 2rem;
+  line-height: 1rem;
   font-weight: 600;
   margin-right: 0.5rem;
 `;
 
 const Inner = styled.div`
-  font-size: 1.5rem;
+  font-size: 2rem;
   width: 10rem;
   line-height: 1.8rem;
-  text-transform: lowercase;
+
+  // text-transform: lowercase;
 `;

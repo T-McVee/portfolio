@@ -22,7 +22,7 @@ export const Bio = () => {
 
 const Section = styled.section`
   width: 100%;
-  padding: 5.5rem;
+  padding: 12rem 5.5rem;
 
   @media screen and (max-width: 675px) {
     padding: 2rem;
@@ -30,13 +30,13 @@ const Section = styled.section`
 `;
 
 const H1 = styled.h1`
-  font-size: 2rem;
+  font-size: 4rem;
   width: 100%;
   margin-bottom: 4rem;
 `;
 
 const P = styled.p`
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-bottom: 4rem;
 `;
 
@@ -47,5 +47,5 @@ const Xp = styled.div`
 `;
 
 const Divide = styled.hr`
-  margin-top: 5.5rem;
+  margin-top: 12rem;
 `;
