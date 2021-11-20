@@ -33,6 +33,10 @@ const H1 = styled.h1`
   font-size: 4rem;
   width: 100%;
   margin-bottom: 4rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 3rem;
+  }
 `;
 
 const P = styled.p`
@@ -44,6 +48,11 @@ const Xp = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    border: 1px solid red;
+  }
 `;
 
 const Divide = styled.hr`
