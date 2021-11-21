@@ -22,8 +22,9 @@ function App() {
 const theme = {
   colorBlack: '#000000',
   colorWhite: '#ffffff',
-  colorGrey: '#5E5862',
-  colorSoftGrey: '#EBEBEB',
+  colorDarkGrey: '#5E5862',
+  colorGrey: '#D6D6D6',
+  colorLightGrey: '#EBEBEB',
   colorAccent1: '#AA25FD',
   colorAccent2: '#DF4F2B',
   radiusSmall: '8px',
