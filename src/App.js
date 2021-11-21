@@ -3,6 +3,18 @@ import { Bio } from './components/Bio';
 import { Work } from './components/Work';
 import { Skills } from './components/Skills';
 import { Footer } from './components/Footer';
+import {
+  faHtml5,
+  faCss3Alt,
+  faJs,
+  faReact,
+  faSass,
+  faWordpress,
+} from '@fortawesome/free-brands-svg-icons';
+import logoWebpack from './img/logos/logoWebpack.png';
+import logoBigCommerce from './img/logos/logoBigCommerce.png';
+import logoXd from './img/logos/logoXd.png';
+import logoPhotoshop from './img/logos/logoPhotoshop.png';
 import { ThemeProvider } from 'styled-components';
 
 function App() {
@@ -12,12 +24,25 @@ function App() {
         <Splash />
         <Bio />
         <Work />
-        <Skills />
+        <Skills skills={skills} />
         <Footer />
       </ThemeProvider>
     </div>
   );
 }
+
+const skills = [
+  { name: 'HTML5', icon: faHtml5 },
+  { name: 'CSS', icon: faCss3Alt },
+  { name: 'Javascript', icon: faJs },
+  { name: 'React', icon: faReact },
+  { name: 'Sass', icon: faSass },
+  { name: 'Webpack', logo: logoWebpack },
+  { name: 'BigCommerce', logo: logoBigCommerce },
+  { name: 'Wordpress', icon: faWordpress },
+  { name: 'Xd', logo: logoXd },
+  { name: 'Photoshop', logo: logoPhotoshop },
+];
 
 const theme = {
   colorBlack: '#000000',

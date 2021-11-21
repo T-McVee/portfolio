@@ -36,6 +36,4 @@ it('<Project>', () => {
   expect(screen.getByTestId('body').textContent).toBe(body);
   expect(screen.getAllByRole('link').length).toBe(links.length);
   expect(screen.queryAllByTestId('tag').length).toBe(tags.length);
-
-  screen.debug();
 });

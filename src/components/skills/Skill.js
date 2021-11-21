@@ -7,9 +7,15 @@ export const Skill = (props) => {
   const { name, icon, logo } = props;
 
   return (
-    <Li>
-      {icon && <FontAwesomeIcon icon={icon} className="icon-skill" />}
-      {logo && <Logo src={logo} />}
+    <Li data-testid="skill">
+      {icon && (
+        <FontAwesomeIcon
+          icon={icon}
+          className="icon-skill"
+          data-testid="logo"
+        />
+      )}
+      {logo && <Logo src={logo} data-testid="logo" />}
 
       <H2>{name}</H2>
     </Li>

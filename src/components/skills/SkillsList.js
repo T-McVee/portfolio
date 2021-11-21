@@ -4,10 +4,16 @@ import { Skill } from './Skill';
 export const SkillsList = (props) => {
   const { skills } = props;
 
+  if (!skills) return null;
   return (
     <Wrapper>
       {skills.map((skill) => (
-        <Skill name={skill.name} icon={skill.icon} logo={skill.logo} />
+        <Skill
+          key={skill.name}
+          name={skill.name}
+          icon={skill.icon}
+          logo={skill.logo}
+        />
       ))}
     </Wrapper>
   );
