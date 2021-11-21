@@ -6,7 +6,9 @@ export const HeaderUpper = () => {
       <H1>
         Tim <br /> <span className="bold">McVinish</span>
       </H1>
-      <Button>get in contact</Button>
+      <Button onClick={() => (window.location = 'mailto:iam@tmcvee.com')}>
+        get in contact
+      </Button>
     </HeaderUpperWrapper>
   );
 };

@@ -7,7 +7,12 @@ export const Links = (props) => {
   return (
     <Wrapper rightAlign={rightAlign}>
       {links.map((link) => (
-        <Link key={link.text} href={link.url} rightAlign={rightAlign}>
+        <Link
+          key={link.text}
+          href={link.url}
+          rightAlign={rightAlign}
+          target="blank"
+        >
           {link.text}
         </Link>
       ))}

@@ -5,9 +5,13 @@ export const Project = (props) => {
   const { cover, text, rightAlign } = props;
   const { heading, subheading, body, links, tags } = text;
 
+  const openSite = () => {
+    window.open(links[0].url);
+  };
+
   return (
     <Wrapper rightAlign={rightAlign} data-testid="project">
-      {rightAlign && <Cover src={cover} rightAlign />}
+      {rightAlign && <Cover src={cover} rightAlign onClick={openSite} />}
       <Description
         heading={heading}
         subheading={subheading}
@@ -16,7 +20,7 @@ export const Project = (props) => {
         tags={tags}
         rightAlign={rightAlign}
       />
-      {!rightAlign && <Cover src={cover} />}
+      {!rightAlign && <Cover src={cover} onClick={openSite} />}
     </Wrapper>
   );
 };
@@ -41,9 +45,13 @@ const Wrapper = styled.article`
 const Cover = styled.img`
   width: 58%;
   margin: ${(props) => (props.rightAlign ? '0 2rem 0 0' : '0 0 0 2rem')};
+  transition: box-shadow ${(props) => props.theme.timeLong},
+    transform ${(props) => props.theme.timeLong} ease-in-out;
 
-  @media screen and (max-width: ${(props) => props.theme.breakpointXlScreen}) {
-    // width: 48%;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 12px ${(props) => props.theme.colorLightGrey};
+    transform: scale(1.01);
   }
 
   @media screen and (max-width: ${(props) => props.theme.breakpointLaptop}) {

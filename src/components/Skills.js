@@ -16,7 +16,7 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 12rem 5.5rem 5.5rem 5.5rem;
+  padding: 12rem 5.5rem 12rem 5.5rem;
   background-color: ${(props) => props.theme.colorLightGrey};
   color: ${(props) => props.theme.colorBlack};
 

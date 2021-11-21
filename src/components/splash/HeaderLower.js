@@ -20,9 +20,15 @@ export const HeaderLower = () => {
         </P>
       </HeaderLowerText>
       <Icons>
-        <FontAwesomeIcon icon={faGithub} className="icon" />
-        <FontAwesomeIcon icon={faLinkedin} className="icon" />
-        <FontAwesomeIcon icon={faEnvelope} className="icon" />
+        <A href="https://github.com/T-McVee" target="blank">
+          <FontAwesomeIcon icon={faGithub} className="icon-footer" />
+        </A>
+        <A href="https://www.linkedin.com/in/t-mcvee/" target="blank">
+          <FontAwesomeIcon icon={faLinkedin} className="icon-footer" />
+        </A>
+        <A href="mailto: iam@tmcvee.com" target="blank">
+          <FontAwesomeIcon icon={faEnvelope} className="icon-footer" />
+        </A>
       </Icons>
     </HeaderLowerWrapper>
   );
@@ -60,6 +66,18 @@ const P = styled.p`
 
   @media screen and (max-width: ${(props) => props.theme.breakpointTablet}) {s
     text-shadow: 2px 2px 12px rgba(255, 255, 255, 0.8);
+  }
+`;
+
+const A = styled.a`
+  text-decoration: none;
+  color: ${(props) => props.theme.colorBlack};
+  transform: translate(50%);
+  transition: color ${(props) => props.theme.time};
+
+  &:hover {
+    cursor: pointer;
+    color: ${(props) => props.theme.colorAccent1};
   }
 `;
 

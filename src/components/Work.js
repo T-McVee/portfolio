@@ -14,8 +14,8 @@ const projects = [
       subheading: 'A tribute to Trello',
       body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum soluta aut rem enim architecto natus magnam ex doloribus? Nesciunt impedit error necessitatibus, dicta tenetur ad veniam recusandae molestiae vero obcaecati.',
       links: [
-        { url: '#', text: 'Live' },
-        { url: '#', text: 'Repo' },
+        { url: 'https://t-mcvee.github.io/to-do-list-project/', text: 'Live' },
+        { url: 'https://github.com/T-McVee/to-do-list-project', text: 'Repo' },
       ],
       tags: [
         'javascript',
@@ -33,8 +33,8 @@ const projects = [
       subheading: 'Space Invaders... With Squeeze Bottles',
       body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum soluta aut rem enim architecto natus magnam ex doloribus? Nesciunt impedit error necessitatibus, dicta tenetur ad veniam recusandae molestiae vero obcaecati.',
       links: [
-        { url: '#', text: 'Live' },
-        { url: '#', text: 'Repo' },
+        { url: 'https://sauce-invaders-v2.netlify.app', text: 'Live' },
+        { url: 'https://github.com/T-McVee/sauceInvaders-van', text: 'Repo' },
       ],
       tags: ['javascript', 'SASS', 'Canvas', 'indexedDB'],
     },
@@ -46,8 +46,8 @@ const projects = [
       subheading: 'A Frontend Mentors Code Challenge',
       body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum soluta aut rem enim architecto natus magnam ex doloribus? Nesciunt impedit error necessitatibus, dicta tenetur ad veniam recusandae molestiae vero obcaecati.',
       links: [
-        { url: '#', text: 'Live' },
-        { url: '#', text: 'Repo' },
+        { url: 'https://ip-tracker-fem-challenge.netlify.app', text: 'Live' },
+        { url: 'https://github.com/T-McVee/ip-address-tracker', text: 'Repo' },
       ],
       tags: [
         'javascript',
@@ -65,8 +65,8 @@ const projects = [
       subheading: 'Can you remember how to save the universe?',
       body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum soluta aut rem enim architecto natus magnam ex doloribus? Nesciunt impedit error necessitatibus, dicta tenetur ad veniam recusandae molestiae vero obcaecati.',
       links: [
-        { url: '#', text: 'Live' },
-        { url: '#', text: 'Repo' },
+        { url: 'https://t-mcvee.github.io/memory-card-project/', text: 'Live' },
+        { url: 'https://github.com/T-McVee/memory-card-project', text: 'Repo' },
       ],
       tags: [
         'javascript',
@@ -83,7 +83,7 @@ const projects = [
       heading: 'FIFO Savings Calculator',
       subheading: 'Discover how much a restaurant can save with FIFO',
       body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum soluta aut rem enim architecto natus magnam ex doloribus? Nesciunt impedit error necessitatibus, dicta tenetur ad veniam recusandae molestiae vero obcaecati.',
-      links: [{ url: '#', text: 'Live' }],
+      links: [{ url: 'https://www.savewithfifo.com/', text: 'Live' }],
       tags: ['javascript', 'Sass', 'Netlify Forms', 'Lead gen'],
     },
   },
