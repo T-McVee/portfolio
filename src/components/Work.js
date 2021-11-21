@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import { Projects } from './work/Projects';
 import coverListLab from '../img/coverListLab.jpg';
+import coverSauceInvaders from '../img/coverSauceInvaders.jpg';
+import coverIpTracker from '../img/coverIpTracker.jpg';
+import coverRickAndMorty from '../img/coverRickAndMorty.jpg';
 
 const projects = [
   {
@@ -23,10 +26,23 @@ const projects = [
     },
   },
   {
-    cover: coverListLab,
+    cover: coverSauceInvaders,
     text: {
-      heading: 'List Lab',
-      subheading: 'A tribute to Trello',
+      heading: 'Sauce Invaders',
+      subheading: 'Space Invaders... With Squeeze Bottles',
+      body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum soluta aut rem enim architecto natus magnam ex doloribus? Nesciunt impedit error necessitatibus, dicta tenetur ad veniam recusandae molestiae vero obcaecati.',
+      links: [
+        { url: '#', text: 'Live' },
+        { url: '#', text: 'Repo' },
+      ],
+      tags: ['javascript', 'SASS', 'Canvas', 'indexedDB'],
+    },
+  },
+  {
+    cover: coverIpTracker,
+    text: {
+      heading: 'IP Address Tracker Challenge',
+      subheading: 'A Frontend Mentors Code Challenge',
       body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum soluta aut rem enim architecto natus magnam ex doloribus? Nesciunt impedit error necessitatibus, dicta tenetur ad veniam recusandae molestiae vero obcaecati.',
       links: [
         { url: '#', text: 'Live' },
@@ -34,10 +50,29 @@ const projects = [
       ],
       tags: [
         'javascript',
-        'sass',
-        'firebase auth',
-        "drag n' drop",
-        'indexedDB',
+        'React',
+        'Styled Components',
+        'Leaflet Maps',
+        'APIs',
+      ],
+    },
+  },
+  {
+    cover: coverRickAndMorty,
+    text: {
+      heading: 'Rick and Morty Memory Cards',
+      subheading: 'Can you remember how to save the universe?',
+      body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum soluta aut rem enim architecto natus magnam ex doloribus? Nesciunt impedit error necessitatibus, dicta tenetur ad veniam recusandae molestiae vero obcaecati.',
+      links: [
+        { url: '#', text: 'Live' },
+        { url: '#', text: 'Repo' },
+      ],
+      tags: [
+        'javascript',
+        'React',
+        'Styled Components',
+        'Leaflet Maps',
+        'APIs',
       ],
     },
   },
