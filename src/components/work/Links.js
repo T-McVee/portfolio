@@ -33,16 +33,16 @@ const Link = styled.a`
     cursor: pointer;
   }
 
-  @media screen and (max-width: 1440px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointXlScreen}) {
     font-size: 1rem;
   }
 
-  @media screen and (max-width: 1304px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointLaptop}) {
     font-size: 1.2rem;
     margin: ${(props) => (props.rightAlign ? '0 1rem 0 0' : '0 0 0 1rem')};
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointTablet}) {
     font-size: 1rem;
   }
 `;

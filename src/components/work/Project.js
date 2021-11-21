@@ -27,17 +27,14 @@ const Wrapper = styled.article`
   margin-bottom: 12rem;
   margin-left: ${(props) => (props.rightAlign ? '5.5rem' : '2.5rem')};
   max-width: 1504px;
-  width: calc(100% - 5.5rem);
+  width: calc(90% - 5.5rem);
 
-  @media screen and (min-width: 1440px) {
-    //max-width: 1504px;
-  }
-
-  @media screen and (max-width: 1304px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointLaptop}) {
     flex-direction: ${(props) =>
       props.rightAlign ? 'column' : 'column-reverse'};
 
     margin-left: ${(props) => (props.rightAlign ? '0' : '2.5rem')};
+    float: ${(props) => (props.rightAlign ? 'left' : 'right')};
   }
 `;
 
@@ -45,11 +42,11 @@ const Cover = styled.img`
   width: 58%;
   margin: ${(props) => (props.rightAlign ? '0 2rem 0 0' : '0 0 0 2rem')};
 
-  @media screen and (max-width: 1440px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointXlScreen}) {
     // width: 48%;
   }
 
-  @media screen and (max-width: 1304px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointLaptop}) {
     width: 100%;
     margin: 0;
   }

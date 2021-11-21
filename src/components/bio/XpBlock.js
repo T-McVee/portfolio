@@ -17,6 +17,10 @@ export const XpBlock = (props) => {
 
 const Wrapper = styled.div`
   margin-right: 2rem;
+
+  &:first-of-type {
+    margin-bottom: 2rem;
+  }
 `;
 
 const H2 = styled.h2`
@@ -38,7 +42,7 @@ const BigNumber = styled.div`
   color: ${(props) => props.theme.colorAccent1};
   line-height: 3.5rem;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointTablet}) {
     font-size: 4rem;
   }
 `;
@@ -50,7 +54,7 @@ const MidChar = styled.div`
   font-weight: 600;
   margin-right: 0.5rem;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointTablet}) {
     font-size: 1.5rem;
   }
 `;

@@ -24,7 +24,7 @@ const Section = styled.section`
   width: 100%;
   padding: 12rem 5.5rem;
 
-  @media screen and (max-width: 675px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointTablet}) {
     padding: 2rem;
   }
 `;
@@ -34,7 +34,7 @@ const H1 = styled.h1`
   width: 100%;
   margin-bottom: 4rem;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointTablet}) {
     font-size: 3rem;
   }
 `;
@@ -49,9 +49,8 @@ const Xp = styled.div`
   flex-direction: row;
   width: 100%;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointsTablet}) {
     flex-direction: column;
-    border: 1px solid red;
   }
 `;
 

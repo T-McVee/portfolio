@@ -18,7 +18,7 @@ const fakeProject = {
   },
 };
 
-it('<ProjectR>', () => {
+it('<Project>', () => {
   render(
     <Project
       cover={fakeProject.cover}

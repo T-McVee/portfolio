@@ -24,7 +24,7 @@ const Section = styled.section`
   background-position: center;
   background-size: cover;
 
-  @media screen and (max-width: 675px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointTablet}) {
     padding: 2rem;
   }
 `;

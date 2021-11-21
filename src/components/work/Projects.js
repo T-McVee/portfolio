@@ -18,7 +18,5 @@ export const Projects = (props) => {
 };
 
 const Wrapper = styled.main`
-  display: flex;
-  flex-direction: column;
   width: 100%;
 `;

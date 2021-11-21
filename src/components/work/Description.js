@@ -24,7 +24,7 @@ const Wrapper = styled.div`
   width: 42%;
   max-width: 500px;
 
-  @media screen and (max-width: 1304px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointLaptop}) {
     width: 100%;
     max-width: 100%;
     margin-top: 1rem;
@@ -37,15 +37,15 @@ const H2 = styled.h2`
   font-size: 2rem;
   text-align: ${(props) => (props.rightAlign ? 'left' : 'right')};
 
-  @media screen and (max-width: 1440px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointXlScreen}) {
     font-size: 1.5rem;
   }
 
-  @media screen and (max-width: 1304px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointsLaptop}) {
     font-size: 2rem;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointTablet}) {
     font-size: 1.5rem;
   }
 `;
@@ -58,15 +58,15 @@ const Subheading = styled.p`
   text-transform: lowercase;
   margin-bottom: 1rem;
 
-  @media screen and (max-width: 1440px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointXlScreen}) {
     font-size: 1.2rem;
   }
 
-  @media screen and (max-width: 1304px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointLaptop}) {
     font-size: 1.5rem;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointTablet}) {
     font-size: 1.2rem;
   }
 `;
@@ -76,17 +76,17 @@ const Body = styled.p`
   text-align: ${(props) => (props.rightAlign ? 'left' : 'right')};
   margin-bottom: 1rem;
 
-  @media screen and (max-width: 1440px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointXlScreen}) {
     font-size: 1rem;
     line-height: 1.2rem;
   }
 
-  @media screen and (max-width: 1304px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointLaptop}) {
     font-size: 1.2rem;
     line-height: 1.5rem;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointTablet}) {
     font-size: 1rem;
   }
 `;

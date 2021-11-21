@@ -58,7 +58,7 @@ const P = styled.p`
   text-align: right;
   font-size: 1.2rem;
 
-  @media screen and (max-width: 675px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointTablet}) {s
     text-shadow: 2px 2px 12px rgba(255, 255, 255, 0.8);
   }
 `;

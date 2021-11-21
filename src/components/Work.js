@@ -4,6 +4,7 @@ import coverListLab from '../img/coverListLab.jpg';
 import coverSauceInvaders from '../img/coverSauceInvaders.jpg';
 import coverIpTracker from '../img/coverIpTracker.jpg';
 import coverRickAndMorty from '../img/coverRickAndMorty.jpg';
+import coverFifo from '../img/coverFifo.jpg';
 
 const projects = [
   {
@@ -76,6 +77,16 @@ const projects = [
       ],
     },
   },
+  {
+    cover: coverFifo,
+    text: {
+      heading: 'FIFO Savings Calculator',
+      subheading: 'Discover how much a restaurant can save with FIFO',
+      body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum soluta aut rem enim architecto natus magnam ex doloribus? Nesciunt impedit error necessitatibus, dicta tenetur ad veniam recusandae molestiae vero obcaecati.',
+      links: [{ url: '#', text: 'Live' }],
+      tags: ['javascript', 'Sass', 'Netlify Forms', 'Lead gen'],
+    },
+  },
 ];
 
 export const Work = () => {
@@ -88,12 +99,13 @@ export const Work = () => {
 };
 
 const Section = styled.section`
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  padding: 0 5.5rem 5.5rem 5.5rem;
-  height: fit-content;
+  padding: 0 5.5rem;
 
-  @media screen and (max-width: 675px) {
-    padding: 2rem;
+  @media screen and (max-width: ${(props) => props.theme.breakpointTablet}) {
+    padding: 0 2rem;
   }
 `;
 
@@ -102,7 +114,11 @@ const H1 = styled.h1`
   width: 100%;
   margin-bottom: 4rem;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointTablet}) {
     font-size: 3rem;
   }
+`;
+
+const Divide = styled.hr`
+  margin-top: 12rem;
 `;

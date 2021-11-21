@@ -24,7 +24,7 @@ const H1 = styled.h1`
   line-height: 4rem;
   margin-bottom: 1rem;
 
-  @media screen and (max-width: 350px) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointPhone}) {
     font-size: 2.5rem;
     line-height: 3rem;
   }
