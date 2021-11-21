@@ -1,3 +1,6 @@
+import { useEffect } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 import styled from 'styled-components';
 import { Description } from './Description';
 
@@ -5,12 +8,25 @@ export const Project = (props) => {
   const { cover, text, rightAlign } = props;
   const { heading, subheading, body, links, tags } = text;
 
+  useEffect(() => {
+    Aos.init({
+      duration: 2000,
+      easing: 'ease',
+    });
+  }, []);
+
   const openSite = () => {
     window.open(links[0].url);
   };
 
+  const fadeDirection = () => (rightAlign ? 'fade-right' : 'fade-left');
+
   return (
-    <Wrapper rightAlign={rightAlign} data-testid="project">
+    <Wrapper
+      rightAlign={rightAlign}
+      data-testid="project"
+      data-aos={fadeDirection()}
+    >
       {rightAlign && <Cover src={cover} rightAlign onClick={openSite} />}
       <Description
         heading={heading}
