@@ -11,7 +11,7 @@ export const HeaderLower = () => {
   }, []);
 
   return (
-    <HeaderLowerWrapper className="rellax" data-rellax-speed="1">
+    <HeaderLowerWrapper className="rellax" data-rellax-speed="2">
       <HeaderLowerText>
         <H2>
           Web Dev{' '}
