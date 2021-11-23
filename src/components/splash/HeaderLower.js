@@ -1,11 +1,17 @@
+import { useEffect } from 'react';
 import styled from 'styled-components';
+import Rellax from 'rellax';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 export const HeaderLower = () => {
+  useEffect(() => {
+    new Rellax('.rellax', {});
+  }, []);
+
   return (
-    <HeaderLowerWrapper>
+    <HeaderLowerWrapper className="rellax" data-rellax-speed="1">
       <HeaderLowerText>
         <H2>
           Web Dev{' '}
@@ -35,6 +41,8 @@ export const HeaderLower = () => {
 };
 
 const HeaderLowerWrapper = styled.div`
+  position: relative;
+  z-index: 5;
   display: flex;
   justify-content: right;
   width: 100%;
@@ -64,8 +72,8 @@ const P = styled.p`
   text-align: right;
   font-size: 1.2rem;
 
-  @media screen and (max-width: ${(props) => props.theme.breakpointTablet}) {s
-    text-shadow: 2px 2px 12px rgba(255, 255, 255, 0.8);
+  @media screen and (max-width: ${(props) => props.theme.breakpointLaptop}) {
+    text-shadow: 0px 0px 26px rgba(255, 255, 255, 0.6);
   }
 `;
 
@@ -83,6 +91,7 @@ const A = styled.a`
 
 const Icons = styled.div`
   position: relative;
+  z-index: 5;
   display: flex;
   flex-direction: column;
   align-items: flex-end;

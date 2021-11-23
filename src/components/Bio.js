@@ -25,7 +25,7 @@ const Section = styled.section`
   padding: 12rem 5.5rem;
 
   @media screen and (max-width: ${(props) => props.theme.breakpointTablet}) {
-    padding: 2rem;
+    padding: 12rem 2rem;
   }
 `;
 
@@ -49,7 +49,7 @@ const Xp = styled.div`
   flex-direction: row;
   width: 100%;
 
-  @media screen and (max-width: ${(props) => props.theme.breakpointsTablet}) {
+  @media screen and (max-width: ${(props) => props.theme.breakpointTablet}) {
     flex-direction: column;
   }
 `;

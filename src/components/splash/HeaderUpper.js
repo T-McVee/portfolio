@@ -1,8 +1,14 @@
+import { useEffect } from 'react';
 import styled from 'styled-components';
+import Rellax from 'rellax';
 
 export const HeaderUpper = () => {
+  useEffect(() => {
+    new Rellax('.rellax', {});
+  }, []);
+
   return (
-    <HeaderUpperWrapper>
+    <HeaderUpperWrapper className="rellax" data-rellax-speed="1">
       <H1>
         Tim <br /> <span className="bold">McVinish</span>
       </H1>
@@ -14,6 +20,8 @@ export const HeaderUpper = () => {
 };
 
 const HeaderUpperWrapper = styled.div`
+  position: relative;
+  z-index: 5;
   width: 100%;
   height: calc(100% - 14rem);
   border-right: 1px solid ${(props) => props.theme.colorBlack};

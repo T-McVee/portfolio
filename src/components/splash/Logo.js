@@ -11,6 +11,8 @@ export const Logo = () => {
 };
 
 const LogoWrapper = styled.div`
+  position: relative;
+  z-index: 5;
   width: 100%;
   height: 80px;
 `;
