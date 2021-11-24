@@ -19,7 +19,9 @@ const fakeSkills = [
 it('<SkillsList>', () => {
   render(<SkillsList skills={fakeSkills} />);
 
-  expect(screen.getAllByRole('listitem').length).toBe(fakeSkills.length);
+  expect(screen.getAllByTestId('skill').length).toBeGreaterThan(
+    fakeSkills.length
+  );
   expect(screen.getAllByRole('heading')[0].textContent).toBe(
     fakeSkills[0].name
   );

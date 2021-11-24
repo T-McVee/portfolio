@@ -39,18 +39,16 @@ export const SkillsList = (props) => {
   };
 
   return (
-    <Wrapper>
-      <Slider {...settings} className="slider">
-        {skills.map((skill) => (
-          <Skill
-            key={skill.name}
-            name={skill.name}
-            icon={skill.icon}
-            logo={skill.logo}
-          />
-        ))}
-      </Slider>
-    </Wrapper>
+    <Slider {...settings} className="slider">
+      {skills.map((skill) => (
+        <Skill
+          key={skill.name}
+          name={skill.name}
+          icon={skill.icon}
+          logo={skill.logo}
+        />
+      ))}
+    </Slider>
   );
 };
 
