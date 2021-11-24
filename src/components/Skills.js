@@ -8,6 +8,7 @@ export const Skills = (props) => {
     <Section>
       <H1>Skills</H1>
       <SkillsList skills={skills} />
+      <Divide />
     </Section>
   );
 };
@@ -32,5 +33,13 @@ const H1 = styled.h1`
 
   @media screen and (max-width: 768px) {
     font-size: 3rem;
+  }
+`;
+
+const Divide = styled.hr`
+  margin-top: 14rem;
+
+  @media screen and (max-width: ${(props) => props.theme.breakpointTablet}) {
+    margin-top: 4rem;
   }
 `;
