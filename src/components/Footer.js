@@ -38,16 +38,6 @@ const Wrapper = styled.footer`
   padding: 3rem 5.5rem 2rem 5.5rem;
 `;
 
-const H1 = styled.h1`
-  font-size: 2rem;
-  // width: 100%;
-  margin-bottom: 2rem;
-
-  @media screen and (max-width: 768px) {
-    font-size: 3rem;
-  }
-`;
-
 const Icons = styled.div``;
 
 const A = styled.a`

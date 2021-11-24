@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { faHtml5 } from '@fortawesome/free-brands-svg-icons';
 
 export const Skill = (props) => {
   const { name, icon, logo } = props;

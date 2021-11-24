@@ -1,9 +1,7 @@
-import styled from 'styled-components';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Skill } from './Skill';
-import { theme } from '../../App';
 
 export const SkillsList = (props) => {
   const { skills } = props;
@@ -22,7 +20,6 @@ export const SkillsList = (props) => {
           slidesToShow: 2,
           slidesToScroll: 2,
           infinite: true,
-          dots: true,
           centerMode: true,
           centerPadding: '100px',
         },
@@ -52,7 +49,7 @@ export const SkillsList = (props) => {
   );
 };
 
-const Wrapper = styled.ul`
+/* const Wrapper = styled.ul`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -62,4 +59,4 @@ const Wrapper = styled.ul`
   @media screen and (max-width: 768px) {
     display: block;
   }
-`;
+`; */
