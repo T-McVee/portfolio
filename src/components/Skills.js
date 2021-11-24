@@ -20,8 +20,8 @@ const Section = styled.section`
   background-color: ${(props) => props.theme.colorLightGrey};
   color: ${(props) => props.theme.colorBlack};
 
-  @media screen and (max-width: 675px) {
-    padding: 2rem;
+  @media screen and (max-width: ${(props) => props.theme.breakpointTablet}) {
+    padding: 4rem;
   }
 `;
 

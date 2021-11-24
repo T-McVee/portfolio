@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Skill } from './Skill';
+import { theme } from '../../App';
 
 export const SkillsList = (props) => {
   const { skills } = props;
@@ -10,25 +11,45 @@ export const SkillsList = (props) => {
   if (!skills) return null;
 
   const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
+    //mobileFirst: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          autoplay: true,
+          autoplaySpeed: 3000,
+          speed: 1000,
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true,
+          centerMode: true,
+          centerPadding: '100px',
+        },
+      },
+      {
+        breakpoint: 1000,
+        settings: 'unslick',
+      },
+      {
+        breakpoint: 2000,
+        settings: 'unslick',
+      },
+    ],
   };
 
   return (
     <Wrapper>
-      {/* <Slider {...settings}> */}
-      {skills.map((skill) => (
-        <Skill
-          key={skill.name}
-          name={skill.name}
-          icon={skill.icon}
-          logo={skill.logo}
-        />
-      ))}
-      {/* </Slider> */}
+      <Slider {...settings} className="slider">
+        {skills.map((skill) => (
+          <Skill
+            key={skill.name}
+            name={skill.name}
+            icon={skill.icon}
+            logo={skill.logo}
+          />
+        ))}
+      </Slider>
     </Wrapper>
   );
 };
@@ -39,4 +60,8 @@ const Wrapper = styled.ul`
   flex-wrap: wrap;
   width: 100%;
   justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
 `;

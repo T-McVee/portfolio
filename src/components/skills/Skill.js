@@ -34,6 +34,12 @@ const Li = styled.li`
   border-radius: ${(props) => props.theme.radiusSmall};
   margin: 0 1rem 1rem 0;
   padding: 1rem 0;
+
+  @media screen and (max-width: 768px) {
+    width: 10rem;
+    height: 10rem;
+    margin: 0 0 2rem 0;
+  }
 `;
 
 const Logo = styled.img`

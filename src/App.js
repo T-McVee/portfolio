@@ -47,7 +47,7 @@ const skills = [
   { name: 'Photoshop', logo: logoPhotoshop },
 ];
 
-const theme = {
+export const theme = {
   colorBlack: '#000000',
   colorWhite: '#ffffff',
   colorDarkGrey: '#606060',
