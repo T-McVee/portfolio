@@ -40,6 +40,7 @@ const Image = styled.div`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  opacity: 1;
 `;
 
 const WhiteBlock = styled.div`

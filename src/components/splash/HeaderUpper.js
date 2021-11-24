@@ -8,7 +8,7 @@ export const HeaderUpper = () => {
   }, []);
 
   return (
-    <HeaderUpperWrapper className="rellax" data-rellax-speed="1">
+    <HeaderUpperWrapper className="rellax" data-rellax-speed="2">
       <H1>
         Tim <br /> <span className="bold">McVinish</span>
       </H1>
@@ -28,10 +28,10 @@ const HeaderUpperWrapper = styled.div`
 `;
 
 const H1 = styled.h1`
-  font-size: 3.5rem;
+  font-size: 4.5rem;
   font-weight: 400;
   text-transform: uppercase;
-  line-height: 4rem;
+  line-height: 5rem;
   margin-bottom: 1rem;
 
   @media screen and (max-width: ${(props) => props.theme.breakpointPhone}) {
