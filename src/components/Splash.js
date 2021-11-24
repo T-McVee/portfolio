@@ -20,20 +20,24 @@ export const Splash = () => {
         <HeaderUpper />
         <HeaderLower />
       </Header>
-      <White />
+      <WhiteMask />
     </Section>
   );
 };
 
-const White = styled.div`
+const WhiteMask = styled.div`
   position: absolute;
   top: 0;
   left: 0;
   z-index: 3;
   width: 100vw;
   height: 100vh;
-  background-color: #ffffff;
-  opacity: 0.56;
+  //background-color: #ffffff;
+  background-image: linear-gradient(
+    rgb(255, 250, 233, 0.35),
+    rgb(255, 255, 255, 0.78)
+  );
+  opacity: 0.83;
 `;
 
 const Section = styled.section`
