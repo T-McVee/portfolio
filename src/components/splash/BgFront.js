@@ -10,10 +10,10 @@ export const BgFront = () => {
 
   return (
     <Wrapper>
-      <Image className="rellax" data-rellax-speed="4"></Image>
+      <Image className="rellax" data-rellax-speed="3"></Image>
       <WhiteBlock
         className="rellax"
-        data-rellax-speed="4"
+        data-rellax-speed="3"
         data-testid="white"
       />
     </Wrapper>
@@ -44,9 +44,9 @@ const Image = styled.div`
 
 const WhiteBlock = styled.div`
   position: absolute;
-  bottom: calc(-30vh);
+  bottom: calc(-32vh);
   left: 0;
   width: 100vw;
-  height: 30vh;
+  height: 32vh;
   background-color: #ffffff;
 `;
