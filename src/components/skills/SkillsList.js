@@ -12,6 +12,18 @@ export const SkillsList = (props) => {
     //mobileFirst: true,
     responsive: [
       {
+        breakpoint: 568,
+        settings: {
+          autoplay: true,
+          autoplaySpeed: 3000,
+          speed: 1000,
+          centerMode: true,
+          centerPadding: '50px',
+          infinite: true,
+          mobileFirst: true,
+        },
+      },
+      {
         breakpoint: 768,
         settings: {
           autoplay: true,
@@ -21,7 +33,7 @@ export const SkillsList = (props) => {
           slidesToScroll: 2,
           infinite: true,
           centerMode: true,
-          centerPadding: '100px',
+          centerPadding: '70px',
         },
       },
       {

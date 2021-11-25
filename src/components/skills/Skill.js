@@ -33,16 +33,30 @@ const Li = styled.li`
   margin: 0 1rem 1rem 0;
   padding: 1rem 0;
 
-  @media screen and (max-width: 768px) {
-    width: 10rem;
-    height: 10rem;
+  @media screen and (max-width: ${(props) => props.theme.breakpointTablet}) {
+    width: 8rem;
+    height: 8rem;
     margin: 0 0 2rem 0;
+    transform: translate(-50%);
+  }
+
+  @media screen and (max-width: 568px) {
+    width: 95%;
+    height: 8rem;
+    padding: 0;
+    margin: 0;
+    transform: translate(0%);
   }
 `;
 
 const Logo = styled.img`
   width: 4rem;
   height: 4rem;
+
+  @media screen and (max-width: ${(props) => props.theme.breakpointTablet}) {
+    width: 3rem;
+    height: 3rem;
+  }
 `;
 
 const H2 = styled.h2`
@@ -51,4 +65,8 @@ const H2 = styled.h2`
   font-size: 1rem;
   font-weight: 300;
   margin-top: 0.5rem;
+
+  @media screen and (max-width: ${(props) => props.theme.breakpointPhone}) {
+    font-size: 0.8rem;
+  }
 `;
