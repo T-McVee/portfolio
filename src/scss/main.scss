@@ -20,6 +20,10 @@ body {
 
 .icon-skill {
   font-size: 4rem;
+
+  @media screen and (max-width: $breakpointTablet) {
+    font-size: 3rem;
+  }
 }
 
 .icon-footer {
