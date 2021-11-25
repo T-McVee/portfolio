@@ -92,7 +92,11 @@ const projects = [
 export const Work = () => {
   return (
     <Section>
-      <H1>Work.Work.Work.</H1>
+      <H1>
+        Work.Work.
+        <wbr />
+        Work.
+      </H1>
       <Projects projects={projects} />
     </Section>
   );
@@ -116,5 +120,6 @@ const H1 = styled.h1`
 
   @media screen and (max-width: ${(props) => props.theme.breakpointTablet}) {
     font-size: 3rem;
+    overflow-wrap: break-word;
   }
 `;
