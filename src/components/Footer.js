@@ -18,11 +18,11 @@ export const Footer = () => {
         </A>
       </Icons>
       <A href="mailto: iam@tmcvee.com">
-        <P>iam@tmcvee.com</P>
+        <Email>iam@tmcvee.com</Email>
       </A>
-      <p>
+      <Copywrite>
         &copy; Copyright 2021 Tim McVinish<Emoji>👨‍🚀</Emoji>
-      </p>
+      </Copywrite>
     </Wrapper>
   );
 };
@@ -38,7 +38,9 @@ const Wrapper = styled.footer`
   padding: 3rem 5.5rem 2rem 5.5rem;
 `;
 
-const Icons = styled.div``;
+const Icons = styled.div`
+  text-align: center;
+`;
 
 const A = styled.a`
   text-decoration: none;
@@ -56,7 +58,12 @@ const Emoji = styled.span`
   margin-left: 0.5rem;
 `;
 
-const P = styled.p`
+const Email = styled.p`
   font-size: 1.2rem;
   margin: 1rem 0;
+`;
+
+const Copywrite = styled.p`
+  font-size: 1rem;
+  text-align: center;
 `;

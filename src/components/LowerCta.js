@@ -15,6 +15,7 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
   background-color: ${(props) => props.theme.colorLightGrey};
   padding: 0 5.5rem 12rem 5.5rem;
@@ -27,6 +28,7 @@ const Wrapper = styled.section`
 const H1 = styled.h1`
   font-size: 2rem;
   margin-bottom: 2rem;
+  text-align: center;
 `;
 
 const Button = styled.div`
