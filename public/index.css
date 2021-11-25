@@ -19,6 +19,11 @@ body {
 .icon-skill {
   font-size: 4rem;
 }
+@media screen and (max-width: 768px) {
+  .icon-skill {
+    font-size: 3rem;
+  }
+}
 
 .icon-footer {
   font-size: 2rem;

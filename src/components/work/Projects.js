@@ -19,4 +19,5 @@ export const Projects = (props) => {
 
 const Wrapper = styled.main`
   width: 100%;
+  overflow-x: hidden;
 `;

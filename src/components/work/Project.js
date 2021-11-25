@@ -56,6 +56,10 @@ const Wrapper = styled.article`
     margin-left: ${(props) => (props.rightAlign ? '0' : '2.5rem')};
     float: ${(props) => (props.rightAlign ? 'left' : 'right')};
   }
+
+  @media screen and (max-width: ${(props) => props.theme.breakpointPhone}) {
+    width: 100%;
+  }
 `;
 
 const Cover = styled.img`
