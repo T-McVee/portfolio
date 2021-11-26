@@ -31,7 +31,7 @@ const projects = [
     text: {
       heading: 'Sauce Invaders',
       subheading: 'Space Invaders... With Squeeze Bottles',
-      body: 'Come, let me talk to you about squeeze bottles... Or, come play this super awesome retro arcade game and use FIFO sauce dispensers to fight off waves of encroaching fast food items. Created to spice up FIFO Innovations trade show booth.',
+      body: "Come, let me talk to you about squeeze bottles... Or, come play this super awesome retro arcade game and use FIFO sauce dispensers to fight off waves of encroaching fast food items. Created to spice up FIFO Innovation's trade show booth.",
       links: [
         { url: 'https://sauce-invaders-v2.netlify.app', text: 'Live' },
         { url: 'https://github.com/T-McVee/sauceInvaders-van', text: 'Repo' },
