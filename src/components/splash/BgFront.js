@@ -45,9 +45,9 @@ const Image = styled.div`
 
 const WhiteBlock = styled.div`
   position: absolute;
-  bottom: calc(-32vh);
+  bottom: -16rem;
   left: 0;
   width: 100vw;
-  height: 32vh;
+  height: 16rem;
   background-color: #ffffff;
 `;

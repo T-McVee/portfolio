@@ -27,7 +27,7 @@ const H2 = styled.h2`
   font-size: 1rem;
   font-weight: 300;
   text-transform: lowercase;
-  color: ${(props) => props.theme.colorGrey};
+  color: ${(props) => props.theme.colorDarkGrey};
   margin-bottom: 1rem;
 `;
 

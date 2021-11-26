@@ -64,6 +64,8 @@ const Wrapper = styled.article`
 
 const Cover = styled.img`
   width: 58%;
+  box-shadow: 2px 2px 8px ${(props) => props.theme.colorGrey};
+  border-radius: ${(props) => props.theme.radiusSmall};
   margin: ${(props) => (props.rightAlign ? '0 2rem 0 0' : '0 0 0 2rem')};
   transition: box-shadow ${(props) => props.theme.timeLong},
     transform ${(props) => props.theme.timeLong} ease-in-out;
