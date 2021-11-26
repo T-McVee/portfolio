@@ -6,10 +6,13 @@ export const Bio = () => {
     <Section>
       <H1>Schooled in marketing, in love with technology</H1>
       <P>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, aliquid
-        magnam recusandae et maxime earum quisquam obcaecati totam harum
-        voluptas eos nulla animi quia facilis commodi minus! Exercitationem,
-        molestias tempora?
+        Howdy, Based in British Columbia, Canada, I'm a Marketing Specialist,
+        turned Front-End Developer (Who may have taken a 7-year detour as a
+        restaurateur, but that's a whole{' '}
+        <A href="https://www.instagram.com/1609ssm/">other story</A>). I find
+        the outcomes from applying technology to life's problems fascinating and
+        rewarding. It's what drew me to Web Development and what I inspire to
+        create in each project.
       </P>
       <Xp>
         <XpBlock heading="Web development" number="3" />
@@ -42,6 +45,13 @@ const H1 = styled.h1`
 const P = styled.p`
   font-size: 1.2rem;
   margin-bottom: 4rem;
+  letter-spacing: 0.5px;
+  line-height: 1.8rem;
+`;
+
+const A = styled.a`
+  text-decoration: none;
+  color: ${(props) => props.theme.colorAccent1};
 `;
 
 const Xp = styled.div`
