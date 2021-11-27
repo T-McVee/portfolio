@@ -44,7 +44,7 @@ const projects = [
     text: {
       heading: 'IP Address Tracker Challenge',
       subheading: 'A Frontend Mentors Code Challenge',
-      body: 'This was just a fun project I took on to get more experience working with APIs and Jest. The project calls the XXXX API to get the requested IP info then uses the result to update the outputs and map.',
+      body: 'This was just a fun project I took on to get more experience working with APIs and Jest. The project calls the Geolocation API by IPify to get the requested IP info, then uses the result to update the outputs and map.',
       links: [
         { url: 'https://ip-tracker-fem-challenge.netlify.app', text: 'Live' },
         { url: 'https://github.com/T-McVee/ip-address-tracker', text: 'Repo' },

@@ -6,7 +6,7 @@ export const Bio = () => {
     <Section>
       <H1>Schooled in marketing, in love with technology</H1>
       <P>
-        Howdy, Based in British Columbia, Canada, I'm a Marketing Specialist,
+        Howdy, Based in British Columbia, Canada, I'm a Marketing Specialist
         turned Front-End Developer (Who may have taken a 7-year detour as a
         restaurateur, but that's a whole{' '}
         <A href="https://www.instagram.com/1609ssm/">other story</A>). I find
