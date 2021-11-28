@@ -1,8 +1,20 @@
 import ReactModal from 'react-modal';
 import styled from 'styled-components';
 
+const root = document.getElementsByClassName('App');
+
+ReactModal.setAppElement(root);
+
 export const ContactFormModal = (props) => {
-  const { showModal, handleCloseModal } = props;
+  const {
+    showModal,
+    handleFormChange,
+    handleSubmit,
+    name,
+    email,
+    message,
+    handleCloseModal,
+  } = props;
 
   return (
     <div>
@@ -10,34 +22,49 @@ export const ContactFormModal = (props) => {
         isOpen={showModal}
         onRequestClose={handleCloseModal}
         shouldCloseOnOverlayClick={true}
+        testId={'modal'}
       >
         <FormWrapper>
           <button onClick={handleCloseModal}>Close</button>
           <H1>Get in contact</H1>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <FormControl>
-              <Label for="name">Your name:</Label>
+              <Label htmlFor="name">Your name:</Label>
               <Input
                 type="text"
                 name="name"
                 id="name"
                 placeholder="name"
+                value={name}
+                onChange={handleFormChange}
                 required
               />
             </FormControl>
             <FormControl>
-              <Label for="email">Email:</Label>
+              <Label htmlFor="email">Email:</Label>
               <Input
                 type="email"
                 name="email"
                 id="email"
                 placeholder="iam@tmcvee.com"
+                value={email}
+                onChange={handleFormChange}
                 required
               />
             </FormControl>
             <FormControl>
-              <Label for="message">Message:</Label>
-              <TextArea name="message" id="message" required />
+              <Label htmlFor="message">Message:</Label>
+              <TextArea
+                name="message"
+                id="message"
+                value={message}
+                placeholder="Your message"
+                onChange={handleFormChange}
+                required
+              />
+            </FormControl>
+            <FormControl>
+              <Button>Contact</Button>
             </FormControl>
           </Form>
         </FormWrapper>
@@ -89,6 +116,17 @@ const Input = styled.input`
 const TextArea = styled.textarea`
   font-size: 1.2rem;
   font-family: Helvetica, Arial, sans-serif;
-  padding: 1rem;
+  border: none;
+  border-bottom: 1px solid ${(props) => props.theme.colorBlack};
   margin-bottom: 1rem;
+`;
+
+const Button = styled.button`
+  font-size: 1.2rem;
+
+  color: ${(props) => props.theme.colorWhite};
+  background-color: ${(props) => props.theme.colorAccent1};
+  padding: 1rem;
+  border: none;
+  border-radius: ${(props) => props.theme.radiusSmall};
 `;

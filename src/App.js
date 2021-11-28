@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import ReactModal from 'react-modal';
 import { Splash } from './components/Splash';
 import { Bio } from './components/Bio';
 import { Work } from './components/Work';
@@ -21,12 +20,9 @@ import logoXd from './img/logos/logoXd.png';
 import logoPhotoshop from './img/logos/logoPhotoshop.png';
 import { ThemeProvider } from 'styled-components';
 
-ReactModal.setAppElement('#root');
-
 function App() {
   const [showModal, setShowModal] = useState(true);
-  const [contactDetails, setContact] = useState({});
-  const [message, setMessage] = useState('');
+  const [formInfo, setFormInfo] = useState({});
 
   const handleOpenModal = () => {
     setShowModal(true);
@@ -36,8 +32,14 @@ function App() {
     setShowModal(false);
   };
 
-  const handleformChange = (e) => {
-    console.log(e.target.value);
+  const handleFormChange = ({ target: { name, value } }) => {
+    const newValue = formInfo;
+    newValue[name] = value;
+    setFormInfo(newValue);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
   };
 
   return (
@@ -55,6 +57,11 @@ function App() {
         <ContactFormModal
           showModal={showModal}
           handleCloseModal={handleCloseModal}
+          handleFormChange={handleFormChange}
+          handleSubmit={handleSubmit}
+          name={formInfo.name}
+          email={formInfo.email}
+          message={formInfo.email}
         />
       </ThemeProvider>
     </div>
