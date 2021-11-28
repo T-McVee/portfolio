@@ -1,7 +1,8 @@
 import ReactModal from 'react-modal';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBorderNone, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { useEffect, useState } from 'react';
 
 const root = document.getElementsByClassName('App');
 
@@ -18,6 +19,36 @@ export const ContactFormModal = (props) => {
     handleCloseModal,
   } = props;
 
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  });
+
+  const handleResize = () => {
+    setIsDesktop(window.innerWidth > 768);
+  };
+
+  const ModalStyles = {
+    overlay: {
+      zIndex: 10,
+      backgroundColor: '#d6d6d65f',
+      backdropFilter: 'blur(5px)',
+      WebkitBackdropFilter: 'blur(1px)',
+    },
+    content: {
+      border: 'none',
+      maxHeight: '672px',
+      borderRadius: '8px',
+      boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+      left: isDesktop ? '5.5rem' : '1rem',
+      right: isDesktop ? '5.5rem' : '1rem',
+      top: isDesktop ? '8rem' : '4rem',
+      bottom: isDesktop ? '8rem' : '4rem',
+    },
+  };
+
   return (
     <div>
       <ReactModal
@@ -26,23 +57,9 @@ export const ContactFormModal = (props) => {
         shouldCloseOnOverlayClick={true}
         shouldFocusAfterRender={true}
         preventScroll={true}
-        style={{
-          overlay: {
-            zIndex: 10,
-            backgroundColor: '#d6d6d65f',
-            backdropFilter: 'blur(5px)',
-            WebkitBackdropFilter: 'blur(1px)',
-          },
-          content: {
-            border: 'none',
-            borderRadius: '8px',
-            boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-            left: '5.5rem',
-            right: '5.5rem',
-            top: '8rem',
-            bottom: '8rem',
-          },
-        }}
+        // className="modal-content"
+        // overlayClassName="modal-overlay"
+        style={ModalStyles}
         testId={'modal'}
       >
         <FormWrapper>
@@ -50,7 +67,11 @@ export const ContactFormModal = (props) => {
             <FontAwesomeIcon icon={faTimes} />
           </ButtonClose>
           <H1>Get in contact</H1>
-          <Form onSubmit={handleSubmit}>
+          <Form
+            onSubmit={(e) => {
+              handleSubmit(e);
+            }}
+          >
             <FormControl>
               <Label htmlFor="name">Your name:</Label>
               <Input
@@ -81,7 +102,7 @@ export const ContactFormModal = (props) => {
                 name="message"
                 id="message"
                 value={message}
-                placeholder="Your message"
+                placeholder="Your message..."
                 onChange={handleFormChange}
                 required
               />
@@ -97,12 +118,13 @@ export const ContactFormModal = (props) => {
 };
 
 const H1 = styled.h1`
-  font-size: 4rem;
+  font-size: 3rem;
   width: 100%;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+  padding-right: 2rem;
 
   @media screen and (max-width: ${(props) => props.theme.breakpointTablet}) {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 `;
 
@@ -113,17 +135,26 @@ const FormWrapper = styled.div`
   align-items: center;
   width: calc(100% - 11rem);
   margin: 2rem 5.5rem;
+
+  @media screen and (max-width: ${(props) => props.theme.breakpointTablet}) {
+    margin: 1rem 1rem;
+    width: calc(100% - 2rem);
+  }
 `;
 
 const ButtonClose = styled.button`
   position: absolute;
   right: 0;
   font-size: 1.4rem;
-  background-color: ${(props) => props.theme.colorWhite};
+  background-color: transparent;
   border: none;
+  transition: color ${(props) => props.theme.time},
+    transform ${(props) => props.theme.time};
 
   &:hover {
     cursor: pointer;
+    color: ${(props) => props.theme.colorAccent1};
+    transform: scale(1.1);
   }
 `;
 
@@ -147,13 +178,27 @@ const Input = styled.input`
   font-size: 1.2rem;
   border: none;
   border-bottom: 1px solid ${(props) => props.theme.colorBlack};
+
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid ${(props) => props.theme.colorAccent1};
+  }
 `;
 
 const TextArea = styled.textarea`
   font-size: 1.2rem;
+  height: 8rem;
   font-family: Helvetica, Arial, sans-serif;
   border: none;
-  border-bottom: 1px solid ${(props) => props.theme.colorBlack};
+  // border-bottom: 1px solid ${(props) => props.theme.colorBlack};
+  border-radius: ${(props) => props.theme.radiusSmall};
+  background-color: ${(props) => props.theme.colorLightGrey};
+  padding: 0.5rem;
+  resize: none;
+
+  &:focus {
+    outline: 1px solid ${(props) => props.theme.colorAccent1};
+  }
 `;
 
 const Button = styled.button`
@@ -164,7 +209,6 @@ const Button = styled.button`
   padding: 1rem;
   border: none;
   border-radius: ${(props) => props.theme.radiusSmall};
-  margin-top: 2rem;
 
   &:hover {
     cursor: pointer;
