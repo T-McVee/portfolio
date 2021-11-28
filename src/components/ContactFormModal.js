@@ -1,5 +1,7 @@
 import ReactModal from 'react-modal';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBorderNone, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const root = document.getElementsByClassName('App');
 
@@ -22,10 +24,31 @@ export const ContactFormModal = (props) => {
         isOpen={showModal}
         onRequestClose={handleCloseModal}
         shouldCloseOnOverlayClick={true}
+        shouldFocusAfterRender={true}
+        preventScroll={true}
+        style={{
+          overlay: {
+            zIndex: 10,
+            backgroundColor: '#d6d6d65f',
+            backdropFilter: 'blur(5px)',
+            WebkitBackdropFilter: 'blur(1px)',
+          },
+          content: {
+            border: 'none',
+            borderRadius: '8px',
+            boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+            left: '5.5rem',
+            right: '5.5rem',
+            top: '8rem',
+            bottom: '8rem',
+          },
+        }}
         testId={'modal'}
       >
         <FormWrapper>
-          <button onClick={handleCloseModal}>Close</button>
+          <ButtonClose onClick={handleCloseModal}>
+            <FontAwesomeIcon icon={faTimes} />
+          </ButtonClose>
           <H1>Get in contact</H1>
           <Form onSubmit={handleSubmit}>
             <FormControl>
@@ -84,11 +107,24 @@ const H1 = styled.h1`
 `;
 
 const FormWrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: calc(100% - 11rem);
   margin: 2rem 5.5rem;
+`;
+
+const ButtonClose = styled.button`
+  position: absolute;
+  right: 0;
+  font-size: 1.4rem;
+  background-color: ${(props) => props.theme.colorWhite};
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const Form = styled.form`
@@ -99,6 +135,7 @@ const Form = styled.form`
 const FormControl = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 2rem;
 `;
 
 const Label = styled.label`
@@ -110,7 +147,6 @@ const Input = styled.input`
   font-size: 1.2rem;
   border: none;
   border-bottom: 1px solid ${(props) => props.theme.colorBlack};
-  margin-bottom: 1rem;
 `;
 
 const TextArea = styled.textarea`
@@ -118,7 +154,6 @@ const TextArea = styled.textarea`
   font-family: Helvetica, Arial, sans-serif;
   border: none;
   border-bottom: 1px solid ${(props) => props.theme.colorBlack};
-  margin-bottom: 1rem;
 `;
 
 const Button = styled.button`
@@ -129,4 +164,10 @@ const Button = styled.button`
   padding: 1rem;
   border: none;
   border-radius: ${(props) => props.theme.radiusSmall};
+  margin-top: 2rem;
+
+  &:hover {
+    cursor: pointer;
+    outline: 1px solid black;
+  }
 `;
