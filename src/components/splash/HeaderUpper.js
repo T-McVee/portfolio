@@ -2,7 +2,9 @@ import { useEffect } from 'react';
 import styled from 'styled-components';
 import Rellax from 'rellax';
 
-export const HeaderUpper = () => {
+export const HeaderUpper = (props) => {
+  const { handleOpenModal } = props;
+
   useEffect(() => {
     new Rellax('.rellax', {});
   }, []);
@@ -12,9 +14,7 @@ export const HeaderUpper = () => {
       <H1>
         Tim <br /> <span className="bold">McVinish</span>
       </H1>
-      <Button onClick={() => (window.location = 'mailto:iam@tmcvee.com')}>
-        get in contact
-      </Button>
+      <Button onClick={handleOpenModal}>get in contact</Button>
     </HeaderUpperWrapper>
   );
 };

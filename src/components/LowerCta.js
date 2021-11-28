@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-export const LowerCta = () => {
+export const LowerCta = (props) => {
+  const { handleOpenModal } = props;
+
   return (
     <Wrapper>
       <H1>Let's Connect</H1>
-      <Button onClick={() => (window.location = 'mailto:iam@tmcvee.com')}>
-        get in contact
-      </Button>
+      <Button onClick={handleOpenModal}>get in contact</Button>
     </Wrapper>
   );
 };

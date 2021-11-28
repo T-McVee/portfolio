@@ -1,13 +1,15 @@
 import { useEffect } from 'react';
 import styled from 'styled-components';
+import Rellax from 'rellax';
 import bgImageBack from '../img/bg-splash-back.jpg';
 import { BgFront } from './splash/BgFront';
 import { Logo } from './splash/Logo';
 import { HeaderUpper } from './splash/HeaderUpper';
 import { HeaderLower } from './splash/HeaderLower';
-import Rellax from 'rellax';
 
-export const Splash = () => {
+export const Splash = (props) => {
+  const { handleOpenModal, handleCloseModal } = props;
+
   useEffect(() => {
     new Rellax('.rellax', {});
   }, []);
@@ -17,7 +19,7 @@ export const Splash = () => {
       <BgFront className="rellax" data-rellax-speed="1" />
       <Logo />
       <Header>
-        <HeaderUpper />
+        <HeaderUpper handleOpenModal={handleOpenModal} />
         <HeaderLower />
       </Header>
       <WhiteMask />

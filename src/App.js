@@ -1,9 +1,12 @@
+import { useState } from 'react';
+import ReactModal from 'react-modal';
 import { Splash } from './components/Splash';
 import { Bio } from './components/Bio';
 import { Work } from './components/Work';
 import { Skills } from './components/Skills';
 import { LowerCta } from './components/LowerCta';
 import { Footer } from './components/Footer';
+import { ContactFormModal } from './components/ContactFormModal';
 import {
   faHtml5,
   faCss3Alt,
@@ -18,16 +21,41 @@ import logoXd from './img/logos/logoXd.png';
 import logoPhotoshop from './img/logos/logoPhotoshop.png';
 import { ThemeProvider } from 'styled-components';
 
+ReactModal.setAppElement('#root');
+
 function App() {
+  const [showModal, setShowModal] = useState(true);
+  const [contactDetails, setContact] = useState({});
+  const [message, setMessage] = useState('');
+
+  const handleOpenModal = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  const handleformChange = (e) => {
+    console.log(e.target.value);
+  };
+
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
-        <Splash />
+        <Splash
+          handleOpenModal={handleOpenModal}
+          handleCloseModal={handleCloseModal}
+        />
         <Bio />
         <Work />
         <Skills skills={skills} />
-        <LowerCta />
+        <LowerCta handleOpenModal={handleOpenModal} />
         <Footer />
+        <ContactFormModal
+          showModal={showModal}
+          handleCloseModal={handleCloseModal}
+        />
       </ThemeProvider>
     </div>
   );
