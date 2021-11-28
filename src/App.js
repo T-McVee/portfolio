@@ -21,7 +21,7 @@ import logoPhotoshop from './img/logos/logoPhotoshop.png';
 import { ThemeProvider } from 'styled-components';
 
 function App() {
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const [formInfo, setFormInfo] = useState({});
 
   const handleOpenModal = () => {
@@ -30,6 +30,7 @@ function App() {
 
   const handleCloseModal = () => {
     setShowModal(false);
+    setFormInfo({});
   };
 
   const handleFormChange = ({ target: { name, value } }) => {
