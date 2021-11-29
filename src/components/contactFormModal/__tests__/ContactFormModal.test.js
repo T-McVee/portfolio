@@ -13,6 +13,8 @@ it('<ContactFormModal /> open', async () => {
 
   render(<ContactFormModal showModal={true} handleSubmit={fakeHandleSubmit} />);
 
+  expect(screen.getByTestId('modal')).toBeVisible();
+
   const inputName = screen.getByRole('textbox', { name: 'Your name:' });
   const inputEmail = screen.getByRole('textbox', { name: 'Email:' });
   const inputPhone = screen.getByRole('textbox', { name: 'Phone:' });
@@ -20,18 +22,27 @@ it('<ContactFormModal /> open', async () => {
   const submitButton = screen.getByRole('button', { name: /contact/i });
 
   userEvent.click(submitButton);
+  expect(fakeHandleSubmit).toHaveBeenCalledTimes(1);
 
-  /* userEvent.type(inputName, 'Tim');
+  userEvent.type(inputName, 'Tim');
+  expect(inputName).toHaveValue('Tim');
+  userEvent.click(submitButton);
   expect(inputName).toHaveValue('Tim');
 
   userEvent.type(inputEmail, 'iam@tmcvee.com');
   expect(inputEmail).toHaveValue('iam@tmcvee.com');
-  
+  userEvent.click(submitButton);
+  expect(inputEmail).toHaveValue('iam@tmcvee.com');
+
   userEvent.type(inputPhone, '250-000-0000');
-  expect(inputEmail).toHaveValue('250-000-0000');
+  expect(inputPhone).toHaveValue('250-000-0000');
+  userEvent.click(submitButton);
+  expect(inputPhone).toHaveValue('250-000-0000');
 
   userEvent.type(inputMessage, 'hello');
-  expect(inputMessage).toHaveValue('hello'); */
+  expect(inputMessage).toHaveValue('hello');
+  userEvent.click(submitButton);
+  // expect(inputMessage.value).toBe('');
 
   screen.debug();
 });
