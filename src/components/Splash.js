@@ -8,7 +8,7 @@ import { HeaderUpper } from './splash/HeaderUpper';
 import { HeaderLower } from './splash/HeaderLower';
 
 export const Splash = (props) => {
-  const { handleOpenModal, handleCloseModal } = props;
+  const { handleOpenModal } = props;
 
   useEffect(() => {
     new Rellax('.rellax', {});
