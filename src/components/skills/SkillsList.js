@@ -30,7 +30,7 @@ export const SkillsList = (props) => {
           autoplaySpeed: 3000,
           speed: 1000,
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           infinite: true,
           centerMode: true,
           centerPadding: '70px',
@@ -60,15 +60,3 @@ export const SkillsList = (props) => {
     </Slider>
   );
 };
-
-/* const Wrapper = styled.ul`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: center;
-
-  @media screen and (max-width: 768px) {
-    display: block;
-  }
-`; */
