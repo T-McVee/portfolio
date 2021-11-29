@@ -1,7 +1,7 @@
 import ReactModal from 'react-modal';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faHandMiddleFinger, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 
 const root = document.getElementsByClassName('App');
@@ -15,6 +15,7 @@ export const ContactFormModal = (props) => {
     handleSubmit,
     name,
     email,
+    phone,
     message,
     handleCloseModal,
   } = props;
@@ -39,13 +40,13 @@ export const ContactFormModal = (props) => {
     },
     content: {
       border: 'none',
-      maxHeight: '672px',
+      maxHeight: '768px',
       borderRadius: '8px',
       boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
       left: isDesktop ? '5.5rem' : '1rem',
       right: isDesktop ? '5.5rem' : '1rem',
-      top: isDesktop ? '8rem' : '4rem',
-      bottom: isDesktop ? '8rem' : '4rem',
+      top: isDesktop ? '5rem' : '4rem',
+      bottom: isDesktop ? '5rem' : '4rem',
     },
   };
 
@@ -83,6 +84,7 @@ export const ContactFormModal = (props) => {
                 onChange={handleFormChange}
                 required
               />
+              <Alert>Name is required</Alert>
             </FormControl>
             <FormControl>
               <Label htmlFor="email">Email:</Label>
@@ -90,10 +92,22 @@ export const ContactFormModal = (props) => {
                 type="email"
                 name="email"
                 id="email"
-                placeholder="iam@tmcvee.com"
+                placeholder="name@email.com"
                 value={email}
                 onChange={handleFormChange}
                 required
+              />
+              <Alert>Email is required</Alert>
+            </FormControl>
+            <FormControl>
+              <Label htmlFor="phone">Phone:</Label>
+              <Input
+                type="phone"
+                name="phone"
+                id="phone"
+                placeholder="888-888-8888"
+                value={phone}
+                onChange={handleFormChange}
               />
             </FormControl>
             <FormControl>
@@ -106,6 +120,7 @@ export const ContactFormModal = (props) => {
                 onChange={handleFormChange}
                 required
               />
+              <Alert>Message is required</Alert>
             </FormControl>
             <FormControl>
               <Button>Contact</Button>
@@ -182,6 +197,16 @@ const Input = styled.input`
   &:focus {
     outline: none;
     border-bottom: 1px solid ${(props) => props.theme.colorAccent1};
+  }
+`;
+
+const Alert = styled.small`
+  opacity: 0;
+  color: ${(props) => props.theme.colorAccent2};
+  padding-top: 0.25rem;
+
+  &.show {
+    opacity: 1;
   }
 `;
 
