@@ -8,9 +8,19 @@ export const Projects = (props) => {
     <Wrapper data-testid="projects">
       {projects.map((proj, i) =>
         i % 2 ? (
-          <Project cover={proj.cover} text={proj.text} rightAlign={false} />
+          <Project
+            key={i}
+            cover={proj.cover}
+            text={proj.text}
+            rightAlign={false}
+          />
         ) : (
-          <Project cover={proj.cover} text={proj.text} rightAlign={true} />
+          <Project
+            key={i}
+            cover={proj.cover}
+            text={proj.text}
+            rightAlign={true}
+          />
         )
       )}
     </Wrapper>
