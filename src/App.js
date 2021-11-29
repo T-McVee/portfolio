@@ -20,9 +20,20 @@ import logoXd from './img/logos/logoXd.png';
 import logoPhotoshop from './img/logos/logoPhotoshop.png';
 import { ThemeProvider } from 'styled-components';
 
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
+};
+
 function App() {
   const [showModal, setShowModal] = useState(false);
-  const [formInfo, setFormInfo] = useState({});
+  const [formInfo, setFormInfo] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
 
   const handleOpenModal = () => {
     setShowModal(true);
@@ -33,14 +44,34 @@ function App() {
     setFormInfo({});
   };
 
-  const handleFormChange = ({ target: { name, value } }) => {
-    const newValue = formInfo;
-    newValue[name] = value;
-    setFormInfo(newValue);
+  const handleFormChange = (e) => {
+    setFormInfo((prev) => {
+      return { ...prev, [e.target.name]: e.target.value };
+    });
+  };
+
+  const clearForm = () => {
+    setFormInfo((prev) => {
+      for (let key of Object.keys(prev)) {
+        prev[key] = '';
+      }
+
+      return { ...prev };
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', formInfo }),
+    })
+      .then(() => alert('Success!'))
+      .catch((error) => alert(error));
+
+    // e.preventDefault();
+    clearForm();
   };
 
   return (
@@ -62,7 +93,8 @@ function App() {
           handleSubmit={handleSubmit}
           name={formInfo.name}
           email={formInfo.email}
-          message={formInfo.email}
+          phone={formInfo.phone}
+          message={formInfo.message}
         />
       </ThemeProvider>
     </div>
