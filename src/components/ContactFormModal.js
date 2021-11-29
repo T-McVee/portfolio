@@ -1,11 +1,10 @@
 import ReactModal from 'react-modal';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHandMiddleFinger, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 
 const root = document.getElementsByClassName('App');
-
 ReactModal.setAppElement(root);
 
 export const ContactFormModal = (props) => {
@@ -58,8 +57,6 @@ export const ContactFormModal = (props) => {
         shouldCloseOnOverlayClick={true}
         shouldFocusAfterRender={true}
         preventScroll={true}
-        // className="modal-content"
-        // overlayClassName="modal-overlay"
         style={ModalStyles}
         testId={'modal'}
       >
