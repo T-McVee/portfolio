@@ -60,14 +60,17 @@ function App() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e, submitSuccess) => {
     e.preventDefault();
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', formInfo }),
+      body: encode({ 'form-name': 'contact', ...formInfo }),
     })
-      .then(() => alert('Success!'))
+      .then(() => {
+        // Modify display after successful submit
+        submitSuccess();
+      })
       .catch((error) => alert(error));
 
     // e.preventDefault();
@@ -91,10 +94,8 @@ function App() {
           handleCloseModal={handleCloseModal}
           handleFormChange={handleFormChange}
           handleSubmit={handleSubmit}
-          name={formInfo.name}
-          email={formInfo.email}
-          phone={formInfo.phone}
-          message={formInfo.message}
+          onAfterClose
+          formInfo={formInfo}
         />
       </ThemeProvider>
     </div>
