@@ -36,7 +36,7 @@ const projects = [
         { url: 'https://sauce-invaders-v2.netlify.app', text: 'Live' },
         { url: 'https://github.com/T-McVee/sauceInvaders-van', text: 'Repo' },
       ],
-      tags: ['javascript', 'SASS', 'Canvas', 'indexedDB'],
+      tags: ['javascript', 'Sass', 'Canvas', 'indexedDB'],
     },
   },
   {
@@ -68,13 +68,7 @@ const projects = [
         { url: 'https://t-mcvee.github.io/memory-card-project/', text: 'Live' },
         { url: 'https://github.com/T-McVee/memory-card-project', text: 'Repo' },
       ],
-      tags: [
-        'javascript',
-        'React',
-        'Styled Components',
-        'Leaflet Maps',
-        'APIs',
-      ],
+      tags: ['javascript', 'React', 'APIs'],
     },
   },
   {
