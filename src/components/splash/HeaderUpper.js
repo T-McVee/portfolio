@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import styled from 'styled-components';
 import Rellax from 'rellax';
+import { ButtonCta } from '../ButtonCta';
 
 export const HeaderUpper = (props) => {
   const { handleOpenModal } = props;
@@ -14,7 +15,7 @@ export const HeaderUpper = (props) => {
       <H1>
         Tim <br /> <span className="bold">McVinish</span>
       </H1>
-      <Button onClick={handleOpenModal}>get in contact</Button>
+      <ButtonCta text="get in contact" handleClick={handleOpenModal} />
     </HeaderUpperWrapper>
   );
 };
@@ -37,20 +38,5 @@ const H1 = styled.h1`
   @media screen and (max-width: ${(props) => props.theme.breakpointPhone}) {
     font-size: 2.5rem;
     line-height: 3rem;
-  }
-`;
-
-const Button = styled.div`
-  width: fit-content;
-  padding: 0.5rem 1rem;
-  border: 1px solid ${(props) => props.theme.colorBlack};
-  border-radius: ${(props) => props.theme.radiusSmall};
-  transition: background-color 0.3s;
-
-  &:hover {
-    cursor: pointer;
-    background-color: ${(props) => props.theme.colorAccent1};
-    border-color: ${(props) => props.theme.colorAccent1};
-    color: ${(props) => props.theme.colorWhite};
   }
 `;

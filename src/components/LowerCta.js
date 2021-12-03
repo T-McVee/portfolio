@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { ButtonCta } from './ButtonCta';
 
 export const LowerCta = (props) => {
   const { handleOpenModal } = props;
@@ -6,7 +7,7 @@ export const LowerCta = (props) => {
   return (
     <Wrapper>
       <H1>Let's Connect</H1>
-      <Button onClick={handleOpenModal}>get in contact</Button>
+      <ButtonCta text="get in contact" handleClick={handleOpenModal} />
     </Wrapper>
   );
 };
@@ -29,19 +30,4 @@ const H1 = styled.h1`
   font-size: 2rem;
   margin-bottom: 2rem;
   text-align: center;
-`;
-
-const Button = styled.div`
-  width: fit-content;
-  padding: 0.5rem 1rem;
-  border: 1px solid ${(props) => props.theme.colorBlack};
-  border-radius: ${(props) => props.theme.radiusSmall};
-  transition: background-color 0.3s;
-
-  &:hover {
-    cursor: pointer;
-    background-color: ${(props) => props.theme.colorAccent1};
-    border-color: ${(props) => props.theme.colorAccent1};
-    color: ${(props) => props.theme.colorWhite};
-  }
 `;
