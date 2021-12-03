@@ -1,24 +1,29 @@
 import ReactModal from 'react-modal';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes, faGlassCheers } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
-import { ContactForm } from './ContactForm';
+import { ContactForm } from './modal/ContactForm';
 
 const root = document.getElementsByClassName('App');
 ReactModal.setAppElement(root);
 
-export const ContactFormModal = (props) => {
+export const Modal = (props) => {
   const {
     showModal,
     handleFormChange,
-    handleSubmit,
+    handleFormSubmit,
+    isSubmited,
     formInfo,
     handleCloseModal,
   } = props;
 
-  const [isSubmited, setIsSubmitted] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
+
+  // for testing
+  useEffect(() => {
+    console.log(isSubmited);
+  }, []);
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
@@ -27,10 +32,6 @@ export const ContactFormModal = (props) => {
 
   const handleResize = () => {
     setIsDesktop(window.innerWidth > 768);
-  };
-
-  const submitSuccess = () => {
-    setIsSubmitted(true);
   };
 
   const postSubmitStyles = () => {
@@ -69,12 +70,7 @@ export const ContactFormModal = (props) => {
         testId={'modal'}
       >
         <FormWrapper>
-          <ButtonClose
-            onClick={() => {
-              handleCloseModal();
-              setIsSubmitted(false);
-            }}
-          >
+          <ButtonClose onClick={handleCloseModal}>
             <FontAwesomeIcon icon={faTimes} />
           </ButtonClose>
           <H1>{isSubmited ? 'Cheers!' : 'Get in contact'}</H1>
@@ -83,21 +79,13 @@ export const ContactFormModal = (props) => {
               <Emoji>🍻</Emoji>
               <P>Your request has been received.</P>
               <P>We'll contact you shortly.</P>
-              <Button
-                onClick={() => {
-                  handleCloseModal();
-                  setIsSubmitted(false);
-                }}
-              >
-                Close
-              </Button>
+              <Button onClick={handleCloseModal}>Close</Button>
             </Message>
           ) : (
             <ContactForm
               formInfo={formInfo}
               handleFormChange={handleFormChange}
-              handleSubmit={handleSubmit}
-              submitSuccess={submitSuccess}
+              handleFormSubmit={handleFormSubmit}
             />
           )}
         </FormWrapper>

@@ -5,7 +5,7 @@ import { Work } from './components/Work';
 import { Skills } from './components/Skills';
 import { LowerCta } from './components/LowerCta';
 import { Footer } from './components/Footer';
-import { ContactFormModal } from './components/ContactFormModal';
+import { Modal } from './components/Modal';
 import {
   faHtml5,
   faCss3Alt,
@@ -28,6 +28,7 @@ const encode = (data) => {
 
 function App() {
   const [showModal, setShowModal] = useState(false);
+  const [isSubmited, setIsSubmitted] = useState(false);
   const [formInfo, setFormInfo] = useState({
     name: '',
     email: '',
@@ -42,6 +43,7 @@ function App() {
   const handleCloseModal = () => {
     setShowModal(false);
     setFormInfo({});
+    setIsSubmitted(false);
   };
 
   const handleFormChange = (e) => {
@@ -60,7 +62,7 @@ function App() {
     });
   };
 
-  const handleSubmit = (e, submitSuccess) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
     fetch('/', {
       method: 'POST',
@@ -68,12 +70,10 @@ function App() {
       body: encode({ 'form-name': 'contact', ...formInfo }),
     })
       .then(() => {
-        // Modify display after successful submit
-        submitSuccess();
+        setIsSubmitted(true);
       })
       .catch((error) => alert(error));
 
-    // e.preventDefault();
     clearForm();
   };
 
@@ -89,12 +89,12 @@ function App() {
         <Skills skills={skills} />
         <LowerCta handleOpenModal={handleOpenModal} />
         <Footer />
-        <ContactFormModal
+        <Modal
           showModal={showModal}
           handleCloseModal={handleCloseModal}
           handleFormChange={handleFormChange}
-          handleSubmit={handleSubmit}
-          onAfterClose
+          handleFormSubmit={handleFormSubmit}
+          isSubmited={isSubmited}
           formInfo={formInfo}
         />
       </ThemeProvider>

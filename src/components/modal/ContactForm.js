@@ -1,15 +1,15 @@
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
 
 export const ContactForm = (props) => {
-  const { formInfo, handleFormChange, handleSubmit, submitSuccess } = props;
+  const { formInfo, handleFormChange, handleFormSubmit } = props;
   const { name, email, phone, message } = formInfo;
 
   return (
     <Form
       onSubmit={(e) => {
-        handleSubmit(e, submitSuccess);
+        handleFormSubmit(e);
       }}
+      data-testid="contact-form"
     >
       <FormControl>
         <Label htmlFor="name">Your name:</Label>
