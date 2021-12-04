@@ -1,4 +1,3 @@
-import { Children } from 'react';
 import styled from 'styled-components';
 
 export const ButtonCta = (props) => {
@@ -22,9 +21,9 @@ const Button = styled.div`
   &:before {
     content: '';
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%) scaleY(1) scaleX(1.25);
-    top: 100%;
+    right: 100%;
+    transform: translateX(-25%) scaleY(1) scaleX(1.25);
+    top: 0%;
     width: 140%;
     height: 180%;
     background-color: rgba(0, 0, 0, 0.05);
@@ -37,11 +36,11 @@ const Button = styled.div`
   &:after {
     content: '';
     position: absolute;
-    left: 55%;
+    right: 105%;
     transform: translateX(-50%) scaleY(1) scaleX(1.45);
-    top: 180%;
+    top: 25%;
     width: 160%;
-    height: 190%;
+    height: 160%;
     background-color: ${(props) => props.theme.colorAccent1};
     border-radius: 50%;
     display: block;
@@ -56,15 +55,15 @@ const Button = styled.div`
   }
 
   &:hover:before {
-    top: -35%;
+    right: -105%;
     background-color: ${(props) => props.theme.colorAccent1};
-    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+    transform: translateX(-50%) scaleY(1.4) scaleX(1.3);
   }
 
   &:hover:after {
-    top: -45%;
+    right: -100%;
     background-color: ${(props) => props.theme.colorAccent1};
-    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+    transform: translateX(-50%) scaleY(1.4) scaleX(1.3);
   }
 `;
 
