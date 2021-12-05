@@ -12,5 +12,5 @@ it('Links', () => {
   render(<Links links={links} />);
 
   expect(screen.getAllByRole('link').length).toBe(links.length);
-  expect(screen.getByText('Repo').getAttribute('href')).toBe(links[1].url);
+  expect(screen.getAllByRole('link')[0]).toHaveAttribute('href', links[0].url);
 });

@@ -7,7 +7,7 @@ export const Link = (props) => {
   const { text, href, rightAlign } = props;
   return (
     <Button href={href} rightAlign={rightAlign} target="blank">
-      <span class="hover-underline-animation">
+      <span>
         {text === 'Live' ? (
           <FontAwesomeIcon icon={faDesktop} />
         ) : (
@@ -19,7 +19,6 @@ export const Link = (props) => {
   );
 };
 
-// change to an a tag
 const Button = styled.a`
   display: flex;
   flex-direction: row;
@@ -28,10 +27,12 @@ const Button = styled.a`
   text-decoration: none;
 
   span {
-    padding-bottom: 0;
-    letter-spacing: 1px;
+    position: relative;
     font-size: 1rem;
-    padding: ${(props) => (props.rightAlign ? '0 2rem 0 0' : '0 0 0 2rem')};
+    color: ${(props) => props.theme.colorBlack};
+    letter-spacing: 1px;
+    padding: ${(props) =>
+      props.rightAlign ? '0 2rem 1rem 0' : '0 0 1rem 2rem'};
   }
 
   svg {
@@ -42,22 +43,7 @@ const Button = styled.a`
       color ${(props) => props.theme.time};
   }
 
-  &:hover {
-    cursor: pointer;
-  }
-
-  &:hover svg {
-    color: ${(props) => props.theme.colorAccent1};
-    transform: scale(0.95) translateY(0.1rem);
-  }
-
-  .hover-underline-animation {
-    position: relative;
-    color: ${(props) => props.theme.colorBlack};
-    padding-bottom: 1rem;
-  }
-
-  .hover-underline-animation:after {
+  span:after {
     content: '';
     position: absolute;
     width: 100%;
@@ -70,8 +56,18 @@ const Button = styled.a`
     transition: transform ${(props) => props.theme.time} ease-out;
   }
 
-  &:hover .hover-underline-animation:after {
-    transform: scaleX(1);
-    transform-origin: bottom ${(props) => (props.rightAlign ? 'left' : 'right')};
+  &:hover {
+    cursor: pointer;
+
+    & span:after {
+      transform: scaleX(1);
+      transform-origin: bottom
+        ${(props) => (props.rightAlign ? 'left' : 'right')};
+    }
+
+    & svg {
+      color: ${(props) => props.theme.colorAccent1};
+      transform: scale(0.95) translateY(0.1rem);
+    }
   }
 `;

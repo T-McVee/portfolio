@@ -1,13 +1,6 @@
 import { Modal } from '../../Modal';
 import { ContactForm } from '../ContactForm';
-import {
-  render,
-  screen,
-  cleanup,
-  queryByTestId,
-  waitFor,
-  waitForElementToBeRemoved,
-} from '@testing-library/react';
+import { render, screen, cleanup } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 beforeEach(cleanup);
@@ -74,6 +67,4 @@ it('<Modal /> open', async () => {
   expect(closeBtn).toBeVisible();
   //  userEvent.click(closeBtn);
   //  expect(fakeHandleClose).toHaveBeenCalledTimes(1);
-
-  screen.debug();
 });
