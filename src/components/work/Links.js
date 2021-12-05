@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link as LinkNew } from './Link';
 
 export const Links = (props) => {
   const { links, rightAlign } = props;
@@ -7,47 +8,23 @@ export const Links = (props) => {
   return (
     <Wrapper rightAlign={rightAlign}>
       {links.map((link) => (
-        <Link
+        <LinkNew
           key={link.text}
+          text={link.text}
           href={link.url}
           rightAlign={rightAlign}
           target="blank"
-        >
-          {link.text}
-        </Link>
+        />
       ))}
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: ${(props) => (props.rightAlign ? 'flex-satr' : 'flex-end')};
   margin: 2rem 0;
   text-align: ${(props) => (props.rightAlign ? 'left' : 'right')};
-`;
-
-const Link = styled.a`
-  font-size: 1.2rem;
-  text-decoration: none;
-  color: ${(props) => props.theme.colorBlack};
-  padding: ${(props) =>
-    props.rightAlign ? '0.5rem 1.5rem 0.5rem 0' : '0.5rem 0 0.5rem 1.5rem'};
-  margin-right: 1rem;
-  border-bottom: 2px solid ${(props) => props.theme.colorAccent1};
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  @media screen and (max-width: ${(props) => props.theme.breakpointXlScreen}) {
-    font-size: 1rem;
-  }
-
-  @media screen and (max-width: ${(props) => props.theme.breakpointLaptop}) {
-    font-size: 1.2rem;
-    margin: ${(props) => (props.rightAlign ? '0 1rem 0 0' : '0 0 0 1rem')};
-  }
-
-  @media screen and (max-width: ${(props) => props.theme.breakpointTablet}) {
-    font-size: 1rem;
-  }
 `;
